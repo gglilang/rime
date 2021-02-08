@@ -24,8 +24,12 @@ patch:
     - { when: composing, accept: Tab, send: Page_Down }     # Tab翻页
 
 # 快捷键  
-  # - {accept: "Control+a", send: Home, when: composing}    # 光标移至首
-  # - {accept: "Control+e", send: End, when: composing}   # 光标移至尾
+    - {accept: "Control+a", send: Home, when: composing}    # 光标移至首
+    - {accept: "Control+e", send: End, when: composing}   # 光标移至尾
+    - { when: composing, accept: Control+d, send: Delete }
+    - { when: composing, accept: Control+k, send: Shift+Delete }
+    - { when: composing, accept: Control+h, send: BackSpace }
+    - { when: composing, accept: Control+g, send: Escape }
     - {accept: "Control+Shift+1", select: .next, when: always}    # 快速切换输入方案（例如朙月拼音切换到双拼）
   # - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}    # 中英文切换
   # - {accept: "Control+Shift+3", toggle: full_shape, when: always}     # 全角/半角切换
