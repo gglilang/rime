@@ -1,12 +1,8 @@
 
 
-# macOS 好用的输入法 Rime 鼠须管 Squirrel 配置方案详解
+# Rime 鼠须管 Squirrel 配置文件详解——Mac 上较好用的输入法
 
 ![EV1nySmzsxD8QZp](https://i.loli.net/2021/02/05/EV1nySmzsxD8QZp.png)
-
----
-
-很多人使用鼠须管没坚持下去，最大的原因可能就是词库和词频，对于一款无云联想的输入法而言，鼠须管需要坚持使用，时间越久它越香，或许你还会爱上书写✍🏻️，祝君使用愉快。
 
 ---
 
@@ -29,7 +25,7 @@
 ---
 ### 一、安装输入法
 
-下载鼠须管 [0.15.0](https://dl.bintray.com/rime/squirrel/Squirrel-0.15.0.zip) 安装包，初次安装，需注销并重新登录，点选菜单栏【ㄓ】图标。按组合键 `Control`+`｀` 换出输入法方案选项，到这一步，已经可以使用输入法。
+下载鼠须管 [安装包](https://dl.bintray.com/rime/squirrel/Squirrel-0.15.0.zip)，初次安装，需注销并重新登录，点选菜单栏【ㄓ】图标。按组合键 `Control`+`｀` 换出输入法方案选项，到这一步，已经可以使用输入法。
 
 ![008eZBHKgy1gn4v5nn7h7j31e20d2wfr](https://ww1.sinaimg.cn/large/008eZBHKgy1gn4v5nn7h7j31e20d2wfr.jpg)
 
@@ -41,6 +37,10 @@
 ### 二、定制输入法
 
 下载[档案文件](https://github.com/liuour/rime/archive/master.zip)并解压，首先将【font】两个字体安装到 Mac 字体册。
+
+点选【用户设定】打开目录文件夹，将【配置文件】里的所有文件粘贴进去，并选择覆盖文件。
+
+![008eZBHKgy1gn45cxyphgj31e20ca7e9](https://ww1.sinaimg.cn/large/008eZBHKgy1gn45cxyphgj31e20ca7e9.jpg)
 
 ```
 # 配置文件介绍
@@ -73,11 +73,6 @@ squirrel.custom.yaml                     # 皮肤主题
 user.yaml                                # 自带文件    
 ```
 
-
-点选【用户设定】打开目录文件夹，将【配置文件】里的所有文件粘贴进去，并选择覆盖文件。
-
-![008eZBHKgy1gn45cxyphgj31e20ca7e9](https://ww1.sinaimg.cn/large/008eZBHKgy1gn45cxyphgj31e20ca7e9.jpg)
-
 点击【重新部署】完成定制。注：修改任何文件都要重新部署（快捷键 `Control`+`Option`+`｀`）生效。
 
 ![008eZBHKgy1gn45fjrwu3j31e00c87e7](https://ww1.sinaimg.cn/large/008eZBHKgy1gn45fjrwu3j31e00c87e7.jpg)
@@ -97,12 +92,12 @@ user.yaml                                # 自带文件
 * 更多方案名称参考：https://gist.github.com/lotem/2309739
 
 ```
-  schema_list:
-    - schema: luna_pinyin_simp      # 朙月拼音简化字
-  # - schema: luna_pinyin           # 朙月拼音（繁体）
-  # - schema: terra_pinyin          # 地球拼音 dì qiú pīn yīn
-  # - schema: double_pinyin_flypy   # 小鶴雙拼
-  # - schema: wubi86                # 五笔86
+schema_list:
+  - schema: luna_pinyin_simp      # 朙月拼音简化字
+# - schema: luna_pinyin           # 朙月拼音（繁体）
+# - schema: terra_pinyin          # 地球拼音 dì qiú pīn yīn
+# - schema: double_pinyin_flypy   # 小鶴雙拼
+# - schema: wubi86                # 五笔86
 ```
 
 **候选词个数**
@@ -110,7 +105,7 @@ user.yaml                                # 自带文件
 * 数字代表的是候选词个数，根据个人喜欢修改。
 
 ```
-  menu/page_size: 9   # 候选词个数
+menu/page_size: 9   # 候选词个数
 ```
 
 **切换中英文**
@@ -119,13 +114,13 @@ user.yaml                                # 自带文件
 *  `commit_code` = 启用，`noop` = 无操作。
 
 ```
-  ascii_composer/good_old_caps_lock: true     # 若为true，caps只切换大小写
-  ascii_composer/switch_key:
-    Caps_Lock: commit_code                    
-    Shift_L: noop                             # 左Shift
-    Shift_R: noop                             # 右Shift
-    Control_L: noop                           # 左Control
-    Control_R: noop                           # 右Control
+ascii_composer/good_old_caps_lock: true     # 若为true，caps只切换大小写
+ascii_composer/switch_key:
+  Caps_Lock: commit_code                    
+  Shift_L: noop                             # 左Shift
+  Shift_R: noop                             # 右Shift
+  Control_L: noop                           # 左Control
+  Control_R: noop                           # 右Control
 ```
 
 **翻页**
@@ -133,8 +128,8 @@ user.yaml                                # 自带文件
 * 例如， "[" 和 "]" 翻页按键。
 
 ```
-	- { when: paging, accept: bracketleft, send: Page_Up }
-	- { when: has_menu, accept: bracketright, send: Page_Down }
+- { when: paging, accept: bracketleft, send: Page_Up }
+- { when: has_menu, accept: bracketright, send: Page_Down }
 ```
 
 **快捷键**
@@ -143,9 +138,9 @@ user.yaml                                # 自带文件
 * 更多快捷键参考：https://github.com/rime/rime-prelude/blob/master/key_bindings.yaml
 
 ```
-  - {accept: "Control+a", send: Home, when: composing}    # 光标移至首
-  - {accept: "Control+e", send: End, when: composing}   # 光标移至尾
-  - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}    # 中英文切换
+ - {accept: "Control+a", send: Home, when: composing}     					# 光标移至首
+ - {accept: "Control+e", send: End, when: composing}   							# 光标移至尾
+ - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}    # 中英文切换
 ```
 
 
@@ -159,7 +154,7 @@ user.yaml                                # 自带文件
 ```
 #  载入朙月拼音扩充词库
   "translator/dictionary": luna_pinyin.extended
-#  拼写纠错（不建议开启）
+#  拼写纠错
 # "translator/enable_correction": true
 ```
 
@@ -184,10 +179,10 @@ user.yaml                                # 自带文件
 * Emoji 可以在 opencc 文件夹里修改。
 
 ```
-  emoji_conversion:
-    opencc_config: emoji.json
-    option_name: show_emoji
-    tags: abc
+emoji_conversion:
+  opencc_config: emoji.json
+  option_name: show_emoji
+  tags: abc
 ```
 
 ---
@@ -199,16 +194,16 @@ user.yaml                                # 自带文件
 * 设置快捷 Emoji。
 
 ```
-	punctuator:
-  	import_preset: symbols
-  	symbols:
-    	"/fs": [½, ‰, ¼, ⅓, ⅔, ¾, ⅒ ]
-    	"/xh": [ ＊, ×, ✱, ★, ☆, ✩, ✧, ❋, ❊, ❉, ❈, ❅, ✿, ✲]
-    	"/dq": [🌍,🌎,🌏,🌐,🌑,🌒,🌓,🌔,🌕,🌖]
-    	"/sg": [🍇,🍈,🍉,🍊,🍋,🍌,🍍,🍎,🍏,🍐]
-    	"/dw": [🙈,🙉,🙊,🐵,🐒,🐶,🐕,🐩,🐺,🐱]
-    	"/bq": [😀,😁,😂,😃,😄,😅,😆,😉,😊,😋]
-    	"/ss": [💪,👈,👉,👆,👇,✋,👌,👍,👎,✊]
+punctuator:
+  import_preset: symbols
+  symbols:
+    "/fs": [½, ‰, ¼, ⅓, ⅔, ¾, ⅒ ]
+    "/xh": [ ＊, ×, ✱, ★, ☆, ✩, ✧, ❋, ❊, ❉, ❈, ❅, ✿, ✲]
+    "/dq": [🌍,🌎,🌏,🌐,🌑,🌒,🌓,🌔,🌕,🌖]
+    "/sg": [🍇,🍈,🍉,🍊,🍋,🍌,🍍,🍎,🍏,🍐]
+    "/dw": [🙈,🙉,🙊,🐵,🐒,🐶,🐕,🐩,🐺,🐱]
+    "/bq": [😀,😁,😂,😃,😄,😅,😆,😉,😊,😋]
+    "/ss": [💪,👈,👉,👆,👇,✋,👌,👍,👎,✊]
 ```
 
 ![u9ig64xarQvAL23](https://i.loli.net/2021/02/06/u9ig64xarQvAL23.png)
@@ -216,23 +211,23 @@ user.yaml                                # 自带文件
 * 默认一个按键会显示多个符号，可根据喜欢修改，例如直接上屏。
 
   ```
-      half_shape:
-        "#": "#"
-        "*": "*"
-        "`": "`"
-        "~": "~"
-        "@": "@"
-        "=": "="
-        '\': "、"
-        "/": ["/", "÷"]
-        "'": { pair: ["「", "」"] }
-        "[": "【"
-        "]": "】"
-        "<": "《"
-        ">": "》"
-        "*": "*"
-        "|": ["｜", "|", "·", "・"]
-    recognizer/patterns/punct: "^/([a-z]+|[0-9]0?)$"
+  half_shape:
+    "#": "#"
+    "*": "*"
+    "`": "`"
+    "~": "~"
+    "@": "@"
+    "=": "="
+    '\': "、"
+    "/": ["/", "÷"]
+    "'": { pair: ["「", "」"] }
+    "[": "【"
+    "]": "】"
+    "<": "《"
+    ">": "》"
+    "*": "*"
+    "|": ["｜", "|", "·", "・"]
+  recognizer/patterns/punct: "^/([a-z]+|[0-9]0?)$"
   ```
 
 
