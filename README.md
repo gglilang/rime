@@ -1,8 +1,8 @@
 
 
-# Rime 鼠须管 Squirrel 配置文件详解——Mac 上较好用的输入法
+# Rime 鼠须管 Squirrel 配置文件详解
 
-![EV1nySmzsxD8QZp](https://i.loli.net/2021/02/05/EV1nySmzsxD8QZp.png)
+![1d8wqVfLreA9uYh](https://i.loli.net/2021/02/20/1d8wqVfLreA9uYh.png)
 
 ---
 
